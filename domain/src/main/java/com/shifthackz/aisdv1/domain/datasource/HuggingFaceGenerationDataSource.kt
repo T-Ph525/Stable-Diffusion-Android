@@ -9,12 +9,12 @@ sealed interface HuggingFaceGenerationDataSource {
     interface Remote : HuggingFaceGenerationDataSource {
         fun validateApiKey(): Single<Boolean>
         fun textToImage(
-            modelName: String,
+            endpoint: String,
             payload: TextToImagePayload,
         ): Single<AiGenerationResult>
 
         fun imageToImage(
-            modelName: String,
+            endpoint: String,
             payload: ImageToImagePayload,
         ): Single<AiGenerationResult>
     }
