@@ -55,12 +55,6 @@ android {
 
     flavorDimensions("type")
     productFlavors {
-        create("full") {
-            dimension = "type"
-            applicationIdSuffix = ".full"
-            resValue("string", "app_name", "SDAI Full")
-            buildConfigField("String", "BUILD_FLAVOR_TYPE", "\"FULL\"")
-        }
         create("foss") {
             dimension = "type"
             applicationIdSuffix = ".foss"
