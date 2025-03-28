@@ -44,6 +44,42 @@ android {
         manifestPlaceholders["excludePermissions"] = "true"
     }
 
+    buildTypes {
+        getByName("debug") {
+            buildConfigField("String", "BUILD_TYPE", "\"DEBUG\"")
+        }
+        getByName("release") {
+            buildConfigField("String", "BUILD_TYPE", "\"RELEASE\"")
+        }
+    }
+
+    flavorDimensions("type")
+    productFlavors {
+        create("full") {
+            dimension = "type"
+            applicationIdSuffix = ".full"
+            resValue("string", "app_name", "SDAI Full")
+            buildConfigField("String", "BUILD_FLAVOR_TYPE", "\"FULL\"")
+        }
+        create("foss") {
+            dimension = "type"
+            applicationIdSuffix = ".foss"
+            resValue("string", "app_name", "SDAI FOSS")
+            buildConfigField("String", "BUILD_FLAVOR_TYPE", "\"FOSS\"")
+        }
+        create("playstore") {
+            dimension = "type"
+            resValue("string", "app_name", "SDAI")
+            buildConfigField("String", "BUILD_FLAVOR_TYPE", "\"GOOGLE_PLAY\"")
+        }
+        create("fullDebug") {
+            dimension = "type"
+            applicationIdSuffix = ".fullDebug"
+            resValue("string", "app_name", "SDAI Full Debug")
+            buildConfigField("String", "BUILD_FLAVOR_TYPE", "\"FULL_DEBUG\"")
+        }
+    }
+
     val hasPropertiesFile = File("app/keystore/signing.properties").exists()
     if (hasPropertiesFile) {
         val props = Properties()
