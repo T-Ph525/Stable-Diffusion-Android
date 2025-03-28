@@ -226,6 +226,9 @@ class PreferenceManagerImpl(
         onChanged = ::onPreferencesChanged,
     )
 
+    override val huggingFaceEndpoint: String
+        get() = huggingFaceModel
+
     override fun observe(): Flowable<Settings> = preferencesChangedSubject
         .toFlowable(BackpressureStrategy.LATEST)
         .map {

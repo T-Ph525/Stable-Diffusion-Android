@@ -43,6 +43,7 @@ interface PreferenceManager {
     var backgroundGeneration: Boolean
     var backgroundProcessCount: Int
     var galleryGrid: Grid
+    val huggingFaceEndpoint: String
 
     fun observe(): Flowable<Settings>
     fun refresh(): Completable
