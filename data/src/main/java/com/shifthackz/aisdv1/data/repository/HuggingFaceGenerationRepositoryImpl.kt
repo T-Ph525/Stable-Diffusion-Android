@@ -29,10 +29,10 @@ internal class HuggingFaceGenerationRepositoryImpl(
     override fun validateApiKey() = remoteDataSource.validateApiKey()
 
     override fun generateFromText(payload: TextToImagePayload) = remoteDataSource
-        .textToImage(preferenceManager.huggingFaceModel, payload)
+        .textToImage(preferenceManager.huggingFaceEndpoint, payload)
         .flatMap(::insertGenerationResult)
 
     override fun generateFromImage(payload: ImageToImagePayload) = remoteDataSource
-        .imageToImage(preferenceManager.huggingFaceModel, payload)
+        .imageToImage(preferenceManager.huggingFaceEndpoint, payload)
         .flatMap(::insertGenerationResult)
 }
