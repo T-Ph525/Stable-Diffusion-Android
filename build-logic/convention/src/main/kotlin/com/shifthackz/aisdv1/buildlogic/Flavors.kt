@@ -28,6 +28,12 @@ internal fun Project.configureFlavors(
             resValue("string", "app_name", "SDAI")
             buildConfigField("String", "BUILD_FLAVOR_TYPE", "\"GOOGLE_PLAY\"")
         }
+        productFlavors.create("fullDebug") {
+            dimension = "type"
+            applicationIdSuffix = ".fullDebug"
+            resValue("string", "app_name", "SDAI Full Debug")
+            buildConfigField("String", "BUILD_FLAVOR_TYPE", "\"FULL_DEBUG\"")
+        }
     }
 }
 
@@ -39,5 +45,6 @@ internal fun Project.configureFlavorsCommon(
         productFlavors.create("full") { dimension = "type" }
         productFlavors.create("foss") { dimension = "type" }
         productFlavors.create("playstore") { dimension = "type" }
+        productFlavors.create("fullDebug") { dimension = "type" }
     }
 }
