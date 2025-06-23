@@ -1,15 +1,15 @@
 [versions]
-versionName = "0.6.7"
-versionCode = "188"
+versionName = "0.6.8"
+versionCode = "190"
 targetSdk = "34"
 compileSdk = "35"
 minSdk = "24"
-agp = "8.9.0"
-kotlin = "2.1.10"
-ksp = "2.1.10-1.0.31" # Should match kotlin version
+agp = "8.9.1"
+kotlin = "2.1.20"
+ksp = "2.1.20-1.0.32" # Should match kotlin version
 appcompat = "1.7.0"
 composeCompiler = "1.5.7"
-composeBom = "2025.03.00"
+composeBom = "2025.03.01"
 composeActivity = "1.10.1"
 composeJunit = "1.7.8"
 lifecycleViewModel = "2.8.7"
@@ -19,8 +19,8 @@ pagingCompose = "1.0.0-alpha18" # Do not upgrade!
 gson = "2.12.1"
 retrofit = "2.11.0"
 okhttp = "5.0.0-alpha.14"
-koin = "4.0.2"
-koinCompose = "4.0.2"
+koin = "4.0.4"
+koinCompose = "4.0.4"
 rxAndroidVersion = "3.0.2"
 rxJavaVersion = "3.1.10"
 rxKotlinVersion = "3.0.1"
@@ -47,7 +47,7 @@ turbine = "1.2.0"
 roboelectric = "4.14.1"
 testCoroutines = "1.10.1"
 mediaPipeGenerator = "0.10.21"
-serialization = "1.8.0"
+serialization = "1.8.1"
 
 [libraries]
 android-tools-build-gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
